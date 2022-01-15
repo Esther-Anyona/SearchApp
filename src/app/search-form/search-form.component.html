@@ -1,1 +1,12 @@
-<p>search-form works!</p>
+<div class="container">
+    <form #searchForm='ngForm'>
+        <div class="row mt-4">
+            <div class=" form-group col-md-6">
+                <input type="text" placeholder="Enter search details" class="form-control" id="username" [(ngModel)]='newUser.name' name='name'>
+            </div>
+            <div class=" form-group col-md-6">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>     
+    </form>
+</div>
