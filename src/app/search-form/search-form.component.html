@@ -1,8 +1,11 @@
 <div class="container">
-    <form #searchForm='ngForm'>
+    <form #searchForm='ngForm' (ngSubmit)="submitSearch()">
         <div class="row mt-4">
             <div class=" form-group col-md-6">
-                <input type="text" placeholder="Enter search details" class="form-control" id="username" [(ngModel)]='newUser.name' name='name'>
+                <input type="text" placeholder="Enter search details" class="form-control" id="username" [(ngModel)]='newUser.name' name='name' required #username="ngModel">
+                <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                    <p>Input cannot be empty</p>
+                </div>
             </div>
             <div class=" form-group col-md-6">
                 <button class="btn btn-primary">Search</button>
