@@ -1,1 +1,22 @@
-<p>user works!</p>
+
+<div class="container">
+    <div class="card">
+        <div class="card-title">
+            <p>{{user.login}}</p> 
+        </div>
+        <div class="card-body">
+            <img src={{user.avatar_url}} alt="">
+            <p>{{user.name}}</p>
+            <p>{{user.id}}</p>
+            <p>{{user.html_url}}</p>
+            <p>{{user.public_repos}}</p>
+            <p>{{user.created_at|date}}</p>
+
+            <div class="card-footer">
+                <p>{{user.followers}}</p>
+                <p>{{user.following}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

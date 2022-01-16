@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     NgHttpLoaderModule.forRoot()
   ],
   providers: [],

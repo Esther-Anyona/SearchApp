@@ -14,7 +14,7 @@ export class SearchFormComponent implements OnInit {
   @Output() addRepo = new EventEmitter<Repo>();
 
 
-  newUser = new User("","","",0,"",0,0,0,new Date());
+  newUser = new User("","", "", 0, "", 0, 0, 0, new Date());
   newRepo = new Repo("","","",0, new Date(), "");
 
   submitSearch(){
