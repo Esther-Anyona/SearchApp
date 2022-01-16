@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../user';
 import { Repo } from '../repo';
-import { outputAst } from '@angular/compiler';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search-form',
@@ -10,16 +10,22 @@ import { outputAst } from '@angular/compiler';
 })
 export class SearchFormComponent implements OnInit {
 
-  @Output() addUser = new EventEmitter<User>();
-  @Output() addRepo = new EventEmitter<Repo>();
+  @Output() searchUser = new EventEmitter<User>();
+  @Output() searchRepo = new EventEmitter<Repo>();
 
 
   newUser = new User("","", "", 0, "", 0, 0, 0, new Date());
   newRepo = new Repo("","","",0, new Date(), "");
 
+  onSubmit(form: NgForm){
+    var search=this.newUser;
+    this.searchUser.emit(this.newUser);
+    form.resetForm();
+  }
+
   submitSearch(){
-    this.addUser.emit(this.newUser);
-    this.addRepo.emit(this.newRepo);
+    this.searchUser.emit(this.newUser);
+    this.searchRepo.emit(this.newRepo);
 
   }
 
