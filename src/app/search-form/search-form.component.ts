@@ -23,8 +23,8 @@ export class SearchFormComponent implements OnInit {
     form.resetForm();
   }
 
-  submitSearch(){
-    this.searchUser.emit(this.newUser);
+  submitSearch(data){
+    this.searchUser.emit(data.value.name);
     this.searchRepo.emit(this.newRepo);
 
   }

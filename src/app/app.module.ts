@@ -25,8 +25,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgHttpLoaderModule.forRoot()
+    NgHttpLoaderModule.forRoot(),
   ],
+
+
   providers: [],
   bootstrap: [AppComponent]
 })

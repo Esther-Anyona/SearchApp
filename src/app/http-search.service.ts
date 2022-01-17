@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Repo } from './repo';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,13 @@ url: string ="https://api.github.com/users/esther"
   user: User;
   repo: Repo;
  repoLink:string ="https://api.github.com/users/esther/repos" 
+ accessToken ="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"
+
 
   constructor(private http:HttpClient) { 
     this.user = new User("","", "",0, "", 0, 0, 0, new Date());
     this.repo = new Repo("","","",0, new Date(), "");
+
   }
 
   getUserProfile(){
@@ -79,10 +83,11 @@ url: string ="https://api.github.com/users/esther"
   })
   return promise
 }
-
-
 } 
 
+// const promise = new Promise((resolve,reject)=>{
+//   this.http.get<ApiResponse>('https://api.github.com/users/')
+// })
 //     let promise = new Promise ((resolve,reject)=>{
 //        this.http.get<ApiResponse>(this.url).toPromise().then(result=>{
 //         this.user.name!= result?.name

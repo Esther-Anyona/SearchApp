@@ -1,20 +1,22 @@
 
 <div class="container">
-    <div class="card">
-        <div class="text-center card-title">
-            <p>{{user.login}}</p> 
-        </div>
+    <div class="card">      
         <div class="card-body">
-            <img src={{user.avatar_url}} alt="">
-            <p>{{user.name}}</p>
-            <p>{{user.id}}</p>
-            <p>{{user.html_url}}</p>
-            <p>{{user.public_repos}}</p>
-            <p>{{user.created_at|date}}</p>
+            <div class="card-title">
+                <p><a href="{{user.html_url}}" target="_blank">{{user.login}}</a></p> 
+            </div>
+            <img src={{user.avatar_url}} alt={{user.name}}>
+            <p><span>Name:  </span>{{user.name}}</p>
+            <p><span>Id:    </span>{{user.id}}</p>
+            <p><span>html_url:  </span><a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
+            <p><span>Public repos:  </span>{{user.public_repos}}</p>
+            <p><span>Created:   </span>{{user.created_at|date}}</p>
 
             <div class="card-footer">
-                <p>{{user.followers}}</p>
-                <p>{{user.following}}</p>
+            <i class="fa fa-user-circle" aria-hidden="true">
+                <span>      Followers:  </span>{{user.followers}}
+                <span>      Following: </span>{{user.following}}
+            </i>
             </div>
         </div>
     </div>
