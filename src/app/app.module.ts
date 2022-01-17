@@ -11,6 +11,7 @@ import { RepositoryComponent } from './repository/repository.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UserComponent,
     RepositoryComponent,
     SearchFormComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
