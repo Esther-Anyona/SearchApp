@@ -31,7 +31,7 @@
               <h3><a href="{{ repo.html_url }}" target="_blank" class="card-link color-primary"> {{ repo.name|titlecase}} </a></h3>
             </div>
             <p class="card-text">{{ repo.description ? (repo.description) : 'Repository description could not be found.'}}</p>
-            <p class="card-text">Created on:  <span>{{repo.created_at | date  }}</span></p>
+            <p class="card-text"><i class="fa fa-calendar"></i> Created on:  <span>{{repo.created_at | date  }}</span></p>
             <p class="card-text">Languages: <span>{{ repo.language ? (repo.language) : 'No language found...'}}</span></p>
             <p class="card-text"><i class="fa fa-code-fork"></i> Forks: <span>{{ repo.forks ? (repo.forks) : 'Nill...'}}</span></p>
           </div>
