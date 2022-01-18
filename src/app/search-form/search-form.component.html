@@ -1,27 +1,16 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand"> <img src="../../assets/avatar_github.png" height="50" width="50"> <b>GitHub Search</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class=" navbar-nav me-auto mb-2 mb-lg-0 collapse navbar-collapse" id="navbarSupportedContent">
-            <a class=" nav-item nav-link active" aria-current="page" href="#" routerLink="form">Home</a>
-            <a class=" nav-item nav-link"  routerLink="/users">Users</a>
-            <a class=" nav-item nav-link" routerLink="/repos">Repositories</a>
-        </div>
-    </nav>
-
+<!-- <div class="container">
     <form #searchForm='ngForm' (ngSubmit)="submitSearch(searchForm)">
         <div class="row mt-4">
             <div class=" form-group col-md-6">
-                <input type="text" placeholder="Enter search details" class="form-control rounded-pill" id="username" [(ngModel)]='newUser.name' name='name' required #username="ngModel">
+                <input type="search" placeholder="Enter search details" class="form-control" id="username" [(ngModel)]='githubUserQuery' name='user' required #username="ngModel">
                 <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
                     <p>Input cannot be empty</p>
                 </div>
+                {{githubUserQuery}}
             </div>
             <div class=" form-group col-md-6">
-                <button  class="btn btn-primary">Search</button>
+                <button type="submit" value="submit" class="btn btn-primary">Search</button>
             </div>
         </div>     
     </form>
-</div>
+</div> -->

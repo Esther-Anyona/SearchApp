@@ -8,19 +8,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
-import { SearchFormComponent } from './search-form/search-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { HttpSearchService } from './http-search.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     RepositoryComponent,
-    SearchFormComponent,
     NotFoundComponent,
-    NavigationComponent
+    NavigationComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
 
 
-  providers: [],
+  providers: [HttpSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

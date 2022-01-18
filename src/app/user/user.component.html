@@ -1,6 +1,117 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-5">
+        <div>
+          <form (ngSubmit)="getUserProfile()" id="search-form" #searchTerm="ngForm">
+            <input type="text" class="form-control search" ngModel name="search"
+              placeholder="Enter name" required #search="ngModel">
+              <div [hidden]="search.valid || search.pristine || search.untouched" class="alert alert-danger">
+                <small>Input cannot be empty</small>
+              </div>
+            <div class="d-grid mt-2">
+              <button type="submit" class="btn btn-sm  btn-search" [disabled]="!searchTerm.valid"><i class="fa fa-search m-3"></i>
+                Search User 
+              </button>
+            </div>
+          </form>
+        </div> 
+      </div>
+    </div>
+    <div class="row" *ngIf="showUserDetails">
+      <div class="col-md-10 col-lg-12 col-sm-4 mt-4">
+        <div class="card">      
+          <div class="card-body">
+              <div class="card-title">
+                  <p><a href="{{userDetails.html_url}}" target="_blank">{{userDetails.login|titlecase}}</a></p> 
+              </div>
+              <img src={{userDetails.avatar_url}} alt={{userDetails.name}}>
+              <p><span>Name:  </span>{{userDetails.name}}</p>
+              <p><span>Profile Info:  </span>{{userDetails.bio}}</p>
+              <p><span>Location:    </span>{{userDetails.location}}</p>
+              <p><span>html_url:  </span><a href="{{userDetails.html_url}}" target="_blank">{{userDetails.html_url}}</a></p>
+              <p><span>Public repos:  </span>{{userDetails.public_repos}}</p>
+              <p><span>Created:   </span>{{userDetails.created_at|date}}</p>
+  
+              <div class="card-footer">
+              <i class="fa fa-users" aria-hidden="true">
+                  <span>      Followers:  </span>{{userDetails.followers}}
+                  <span>      Following: </span>{{userDetails.following}}
+              </i>
+              </div>
+          </div>
+      </div>    
+      </div>
+    </div>
+    <div class="card" *ngIf="!showUserDetails && userNotFound">
+          <div class="alert alert-danger" role="alert">The GitHub user could not be found! Try another name.</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="section">
+    <div class="container">
+    <form #searchForm='ngForm' (ngSubmit)="submitSearch()">
+        <div class="row mt-4">
+            <div class=" form-group col-md-6">
+                <input type="search" placeholder="Enter search details" class="form-control" id="username" #search="ngModel" name='user' required #username="ngModel">
+                <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                    <p>Input cannot be empty</p>
+                </div>
+            </div>
+            <div class=" form-group col-md-6">
+                <button type="submit" value="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>     
+    </form>
+    </div> 
 
 <div class="container">
-    <app-search-form></app-search-form>
+    <div class="row row-cols-4">
+        <div class="col">
+            <div class="card m-3">
+                <div class="card-title m-3">
+                    <h3><a href="{{user.html_url}}" class="href" target="_blank">{{user.login}}</a></h3>                   
+                </div>
+                <div class="card-content m-3">
+                   <img src={{user.avatar_url}} alt={{user.name}}>
+                    <p><span>Name:  </span>{{user.name}}</p>
+                    <p><span>Location:    </span>{{user.location}}</p>
+                    <p><span>html_url:  </span><a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
+                    <p><span>Public repos:  </span>{{user.public_repos}}</p>
+                    <p><span>Created:   </span>{{user.created_at|date}}</p>
+                </div>
+                <div class="card-footer">
+                    <i class="fa fa-user-circle ml-2" aria-hidden="true">
+                        <span>      Followers:  </span>{{user.followers}}
+                        <span>      Following: </span>{{user.following}}
+                    </i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<div class="container">
     <div class="card">      
         <div class="card-body">
             <div class="card-title">
@@ -14,7 +125,7 @@
             <p><span>Created:   </span>{{user.created_at|date}}</p>
 
             <div class="card-footer">
-            <i class="fa fa-user-circle" aria-hidden="true">
+            <i class="fa fa-user-circle ml-2" aria-hidden="true">
                 <span>      Followers:  </span>{{user.followers}}
                 <span>      Following: </span>{{user.following}}
             </i>
@@ -22,4 +133,4 @@
         </div>
     </div>
 </div>
-
+ --> 

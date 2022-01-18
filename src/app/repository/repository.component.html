@@ -1,11 +1,44 @@
-<div class="container">
-    <div class="card">
-        <div class="card-title">
-            <h3>{{repo.name}}</h3>
+
+<div class="container search-page">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 mt-5">
+        <div>
+          <form (ngSubmit)="searchGithubUserRepositories()" id="search-form" #searchTerm="ngForm">
+            <input type="text" class="form-control search" ngModel name="search"
+              placeholder="Enter name" required #search="ngModel">
+            <p class="text-danger error-block" *ngIf="!search.valid && search.touched"><small>Fill in field!</small></p>
+            <div class="d-grid mt-2">
+              <button type="submit" class="btn btn-sm btn-search" [disabled]="!searchTerm.valid"><i class="fa fa-search m-3"></i>
+                Search Repositories
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="card-body">
-            <p>{{repo.description}}</p>
-        </div>
+  
+      </div>
+      <div class="col-md-4"></div>
     </div>
-</div>
+    <div class="row my-repository mt-5" *ngIf="showRepos">
+      <div class="col-md-12 text-center m-2">
+        <h2 class="text-underline">Repositories Found for: {{ searchText }}</h2>
+      </div>
+      <div class="col-md-3" *ngFor="let repo of userRepos; let i = index">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5><a href="{{ repo.html_url }}" target="_blank" class="card-link color-primary"> {{ repo.name|titlecase}} </a></h5>
+            <p class="card-text mt-1">{{ repo.description ? (repo.description | slice: 0: 90) : 'No repository description'}} ...</p>
+          </div>
+          <div class="card-body text-center">
+            <p class="card-text">
+              <p><span>Created on:  </span>{{repo.created_at | date  }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body text-center" *ngIf="!showRepos && repoNotFound">
+          <div class="alert alert-danger" role="alert">The Repo could not be found!Try another name.</div>
+    </div>
+  </div>
+
 

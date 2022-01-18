@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpSearchService } from '../http-search.service';
+import { NgForm } from '@angular/forms';
 import { Repo } from '../repo';
 
 @Component({
@@ -9,14 +10,29 @@ import { Repo } from '../repo';
 })
 export class RepositoryComponent implements OnInit {
 
-  repo!:Repo;
+  @ViewChild('searchTerm') searchRepoForm!: NgForm;
+  
+  userRepos;
+  searchText!: string;
+  showRepos = false;
+  repoNotFound = false;
 
-  constructor(private repoSearch:HttpSearchService) { }
+  constructor(private searchService: HttpSearchService) {}
 
-  ngOnInit(): void {
-    this.repoSearch.getRepoList()
-    this.repo = this.repoSearch.repo
-    console.log(this.repo )
+  ngOnInit(): void {}
+
+  searchGithubUserRepositories() {
+    this.searchText = this.searchRepoForm.value.search;
+    this.searchService.getRepos(this.searchText).then(
+      (response) => {
+        this.userRepos = this.searchService.userRepos;
+        this.showRepos = true;
+      },
+      (error) => {
+        this.repoNotFound = true;
+        console.log(error);
+      }
+    ); 
   }
-
 }
+

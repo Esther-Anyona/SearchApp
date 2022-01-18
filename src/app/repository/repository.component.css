@@ -1,0 +1,13 @@
+a{
+    text-decoration: none;
+}
+.card{
+    background-color:lightyellow;
+    box-shadow: 20px chocolate;
+    border-radius: 15px;
+    margin-top: 20px;
+    
+}
+span{
+    color:rgb(210, 30, 105);
+}

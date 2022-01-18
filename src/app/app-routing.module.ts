@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
-import { SearchFormComponent } from './search-form/search-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'home', component:NavigationComponent},
+  { path: '', redirectTo:"/home", pathMatch:"full"},
+  { path: 'home', component:HomeComponent},
   { path: 'users', component:UserComponent},
   { path: 'repos', component:RepositoryComponent},
-  { path: 'form', component:SearchFormComponent},
-  { path: '**', component:NotFoundComponent},
 
   
-  { path: '', redirectTo:"/form", pathMatch:"full"},
+  { path: '**', component:NotFoundComponent},
+
 ];
 
 @NgModule({

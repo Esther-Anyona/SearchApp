@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpSearchService } from '../http-search.service';
+import { NgForm } from '@angular/forms';
 import { User } from '../user';
 import { Repo } from '../repo';
 
@@ -9,19 +10,35 @@ import { Repo } from '../repo';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  user!: User;
-  repo!: Repo;
-  submitSearch(){
+
+  userDetails;
+  userRepos;
+  searchText!: string;
+  showUserDetails = false;
+  userNotFound = false;
+
+ 
+  @ViewChild('searchTerm') searchForm!: NgForm;
+
+  constructor(private searchService: HttpSearchService) {}
+
+  ngOnInit(): void {}
+
+  
+  getUserProfile() {
+    this.searchText = this.searchForm.value.search;
+    this.searchService.getUserRequest(this.searchText).then(
+      (response) => {
+          this.userDetails = this.searchService.userData;
+          this.showUserDetails = true;
+      },
+      (error) => {
+        console.log(error);
+        this.userNotFound = true;
+      }
+    );
 
   }
-
-  constructor( private userSearch:HttpSearchService ) {
-  }
-
-  ngOnInit(): void {
-    this.userSearch.getUserProfile()
-    this.user = this.userSearch.user
-    console.log(this.user ) 
-  }
-
 }
+
+

@@ -18,6 +18,12 @@ img{
     width:100px;
     border-radius: 50%;
 }
+h2,h5{
+    color: #136DFA;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
 a{
     text-decoration: none;
 }
