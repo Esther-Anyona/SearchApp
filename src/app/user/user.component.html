@@ -3,13 +3,13 @@
       <div class="col-md-6 mt-5">
         <div>
           <form (ngSubmit)="getUserProfile()" id="search-form" #searchTerm="ngForm">
-            <input type="text" class="form-control search" ngModel name="search"
+            <input type="text" class="form-control btn-lg bg-light rounded-pill" ngModel name="search"
               placeholder="Enter name" required #search="ngModel">
               <div [hidden]="search.valid || search.pristine || search.untouched" class="alert alert-danger">
                 <small>Input cannot be empty</small>
               </div>
             <div class="d-grid mt-2">
-              <button type="submit" class="btn btn-sm  btn-search" [disabled]="!searchTerm.valid"><i class="fa fa-search m-3"></i>
+              <button type="submit" class="btn  bg-light rounded-pill" [disabled]="!searchTerm.valid"><i class="fa fa-search m-3"></i>
                 Search User 
               </button>
             </div>

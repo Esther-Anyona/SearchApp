@@ -1,5 +1,5 @@
 
-<div class="container homepage mb-3">
+<div class="container mb-3">
     <div class="row">
       <div class="col-md-10 col-lg-12 col-sm-4 mt-4">
         <div class="card">      
@@ -10,7 +10,7 @@
               <img src={{userData.avatar_url}} alt={{userData.name}}>
               <p><span>Name:  </span>{{userData.name}}</p>
               <p><span>Location:    </span>{{userData.location}}</p>
-              <p><span>html_url:  </span><a href="{{userData.html_url}}" target="_blank">{{userData.html_url}}</a></p>
+              <p><span>Profile:  </span><a href="{{userData.html_url}}" target="_blank">{{userData.html_url}}</a></p>
               <p><span>Public repos:  </span>{{userData.public_repos}}</p>
               <p><span>Created:   </span>{{userData.created_at|date}}</p> 
             <div class="card-footer">
@@ -24,15 +24,15 @@
       </div>
     </div>
   
-    <div class="row my-repository">
+    <div class="row">
       <div class="col-md-12">
         <h2 >My repositories</h2>
       </div>
       <div class="col-md-3" *ngFor="let repository of userRepos; let i = index">
-        <div class="card card-repo">
+        <div class="card">
           <div class="card-body text-center">
             <h5><a href="{{ repository.html_url }}" target="_blank">{{ repository.name|titlecase}}</a> </h5>
-            <p class="card-text mt-1">{{ repository.description ? (repository.description) : 'No repository description'}} ...</p>
+            <p class="card-text mt-2">{{ repository.description ? (repository.description) : 'No repository description'}} ...</p>
           </div>
           <div class="card-body text-center">
             <p class="card-text"><strong>Created on: <span>{{

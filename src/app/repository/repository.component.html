@@ -1,15 +1,16 @@
 
-<div class="container search-page">
+<div class="container">
     <div class="row">
-      <div class="col-md-3"></div>
       <div class="col-md-6 mt-5">
         <div>
-          <form (ngSubmit)="searchGithubUserRepositories()" id="search-form" #searchTerm="ngForm">
-            <input type="text" class="form-control search" ngModel name="search"
+          <form (ngSubmit)="searchRepos()" id="search-form" #searchTerm="ngForm">
+            <input type="text" class="form-control btn-lg bg-light rounded-pill" ngModel name="search"
               placeholder="Enter name" required #search="ngModel">
-            <p class="text-danger error-block" *ngIf="!search.valid && search.touched"><small>Fill in field!</small></p>
+              <div [hidden]="search.valid || search.pristine || search.untouched" class="alert alert-danger">
+                <small>Input cannot be empty</small>
+              </div>
             <div class="d-grid mt-2">
-              <button type="submit" class="btn btn-sm btn-search" [disabled]="!searchTerm.valid"><i class="fa fa-search m-3"></i>
+              <button type="submit" class="btn bg-light rounded-pill" [disabled]="!searchTerm.valid"><i class="fa fa-search m-3"></i>
                 Search Repositories
               </button>
             </div>
@@ -19,7 +20,7 @@
       </div>
       <div class="col-md-4"></div>
     </div>
-  <div class="row my-repository mt-5" *ngIf="showRepos">
+  <div class="row mt-5" *ngIf="showRepos">
       <div class="col-md-12 text-center m-2">
         <h2 class="text-underline">Repositories Found for: {{ searchText }}</h2>
       </div>
@@ -38,7 +39,7 @@
       </div>
     </div>
     <div class="card-body text-center" *ngIf="!showRepos && repoNotFound">
-          <div class="alert alert-danger" role="alert">The Repo could not be found!Try another name.</div>
+          <div class="alert alert-danger">The Repo could not be found!Try another name.</div>
     </div>
   </div>
 

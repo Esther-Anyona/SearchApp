@@ -21,7 +21,7 @@ export class RepositoryComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  searchGithubUserRepositories() {
+  searchRepos() {
     this.searchText = this.searchRepoForm.value.search;
     this.searchService.getRepos(this.searchText).then(
       (response) => {
