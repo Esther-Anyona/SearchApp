@@ -5,7 +5,7 @@
 ### Angular Week 2 IP
 
 
-![Esther](../assets/home github.png)
+![Esther](src/assets/home github.png)
 
 ## Table of Contents
 1. Description

@@ -14,6 +14,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpSearchService } from './http-search.service';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpSearchService } from './http-search.service';
     NotFoundComponent,
     NavigationComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

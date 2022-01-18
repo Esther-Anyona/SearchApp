@@ -42,8 +42,8 @@
       </div>    
       </div>
     </div>
-    <div class="card" *ngIf="!showUserDetails && userNotFound">
-      <div class="alert alert-danger" role="alert">The GitHub user could not be found! Try another name.</div>
+    <div class="card-body mb-3" *ngIf="!showUserDetails && userNotFound">
+      <div appHighlight>The GitHub user could not be found! Try another name.</div>
     </div>
   </div>
 
