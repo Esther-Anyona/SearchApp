@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpSearchService } from './http-search.service';
 import { HighlightDirective } from './highlight.directive';
+import { DurationPipe } from './duration.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HighlightDirective } from './highlight.directive';
     NavigationComponent,
     HomeComponent,
     FooterComponent,
-    HighlightDirective
+    HighlightDirective,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
