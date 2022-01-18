@@ -23,7 +23,7 @@ export class HttpSearchService {
   }
 
   
-  getUserRequest(searchText) {
+  getUser(searchText) {
     interface ApiUserResponse {
       login: string;
       name: string;
@@ -54,10 +54,9 @@ export class HttpSearchService {
     );
     return promise;
   }
-
   
   getRepos(searchText) {
-    interface ApiUserRepositoryResponse {
+    interface ApiRepoResponse {
       name: string;
       html_url: string;
       description: string;
@@ -68,7 +67,7 @@ export class HttpSearchService {
    
     let promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<ApiUserRepositoryResponse>(`https://api.github.com/users/${searchText}/repos`, this.header)
+        .get<ApiRepoResponse>(`https://api.github.com/users/${searchText}/repos`, this.header)
         .toPromise()
         .then(
           (response) => {

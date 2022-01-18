@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
   
   getUserProfile() {
     this.searchText = this.searchForm.value.search;
-    this.searchService.getUserRequest(this.searchText).then(
+    this.searchService.getUser(this.searchText).then(
       (response) => {
           this.userDetails = this.searchService.userData;
           this.showUserDetails = true;

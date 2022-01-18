@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
  
   getUserData(username) {
-    this.searchService.getUserRequest(username).then(
+    this.searchService.getUser(username).then(
       (response) => {
         this.userData = this.searchService.userData;
       },
@@ -30,8 +30,6 @@ export class HomeComponent implements OnInit {
       }
     ); 
   }
-
-
   getUserRepos(username) {
     this.searchService.getRepos(username).then(
       (response) => {
