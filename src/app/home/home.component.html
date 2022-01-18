@@ -5,7 +5,7 @@
         <div class="card">      
           <div class="card-body">
               <div class="card-title">
-                  <p><a href="{{userData.html_url}}" target="_blank">{{userData.login}}</a></p> 
+                  <h3><a href="{{userData.html_url}}" target="_blank">{{userData.login}}</a></h3> 
               </div>
               <img src={{userData.avatar_url}} alt={{userData.name}}>
               <p><span>Name:  </span>{{userData.name}}</p>
@@ -14,7 +14,7 @@
               <p><span>Public repos:  </span>{{userData.public_repos}}</p>
               <p><span>Created:   </span>{{userData.created_at|date}}</p> 
             <div class="card-footer">
-              <i class="fa fa-user-circle" aria-hidden="true">
+              <i class="fa fa-users" aria-hidden="true">
                   <span>      Followers:  </span>{{userData.followers}}
                   <span>      Following: </span>{{userData.following}}
               </i>
@@ -32,7 +32,7 @@
         <div class="card card-repo">
           <div class="card-body text-center">
             <h5><a href="{{ repository.html_url }}" target="_blank">{{ repository.name|titlecase}}</a> </h5>
-            <p class="card-text mt-1">{{ repository.description ? (repository.description | slice: 0: 200) : 'No repository description'}} ...</p>
+            <p class="card-text mt-1">{{ repository.description ? (repository.description) : 'No repository description'}} ...</p>
           </div>
           <div class="card-body text-center">
             <p class="card-text"><strong>Created on: <span>{{

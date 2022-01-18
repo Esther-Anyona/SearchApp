@@ -63,7 +63,7 @@ export class HttpSearchService {
       description: string;
       forks: number;
       created_at: Date;
-      languages_url: string;
+      language: string;
     }
    
     let promise = new Promise<void>((resolve, reject) => {

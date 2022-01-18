@@ -19,19 +19,20 @@
       </div>
       <div class="col-md-4"></div>
     </div>
-    <div class="row my-repository mt-5" *ngIf="showRepos">
+  <div class="row my-repository mt-5" *ngIf="showRepos">
       <div class="col-md-12 text-center m-2">
         <h2 class="text-underline">Repositories Found for: {{ searchText }}</h2>
       </div>
       <div class="col-md-3" *ngFor="let repo of userRepos; let i = index">
-        <div class="card">
-          <div class="card-body text-center">
-            <h5><a href="{{ repo.html_url }}" target="_blank" class="card-link color-primary"> {{ repo.name|titlecase}} </a></h5>
-            <p class="card-text mt-1">{{ repo.description ? (repo.description | slice: 0: 90) : 'No repository description'}} ...</p>
-          </div>
-          <div class="card-body text-center">
-            <p class="card-text">
-              <p><span>Created on:  </span>{{repo.created_at | date  }}</p>
+        <div class="card text-center m-4">
+          <div class="card-body">
+            <div class="card-title">
+              <h3><a href="{{ repo.html_url }}" target="_blank" class="card-link color-primary"> {{ repo.name|titlecase}} </a></h3>
+            </div>
+            <p class="card-text">{{ repo.description ? (repo.description) : 'Repository description could not be found.'}}</p>
+            <p class="card-text">Created on:  <span>{{repo.created_at | date  }}</span></p>
+            <p class="card-text">Languages: <span>{{ repo.language ? (repo.language) : 'No language found...'}}</span></p>
+            <p class="card-text"><i class="fa fa-code-fork"></i> Forks: <span>{{ repo.forks ? (repo.forks) : 'Nill...'}}</span></p>
           </div>
         </div>
       </div>

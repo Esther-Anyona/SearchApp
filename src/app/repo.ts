@@ -5,7 +5,7 @@ export class Repo {
         public description: string,
         public forks: number,
         public created_at: Date,
-        public languages_url: string,
+        public language: string,
 
     ){}
 }

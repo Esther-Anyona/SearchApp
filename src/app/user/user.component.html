@@ -22,12 +22,12 @@
         <div class="card">      
           <div class="card-body">
               <div class="card-title">
-                  <p><a href="{{userDetails.html_url}}" target="_blank">{{userDetails.login|titlecase}}</a></p> 
+                  <h3><a href="{{userDetails.html_url}}" target="_blank">{{userDetails.login|titlecase}}</a></h3> 
               </div>
               <img src={{userDetails.avatar_url}} alt={{userDetails.name}}>
-              <p><span>Name:  </span>{{userDetails.name}}</p>
-              <p><span>Profile Info:  </span>{{userDetails.bio}}</p>
-              <p><span>Location:    </span>{{userDetails.location}}</p>
+              <p><span>Name:  </span>{{userDetails.name? (userDetails.name) : 'Name could not be found.....'}}</p>
+              <p><span>Profile Info:  </span>{{ userDetails.bio ? (userDetails.bio) : 'Details could not be found.....'}}</p>
+              <p><span>Physical Address:    </span>{{userDetails.location? (userDetails.location) : 'No address given.....'}}</p>
               <p><span>html_url:  </span><a href="{{userDetails.html_url}}" target="_blank">{{userDetails.html_url}}</a></p>
               <p><span>Public repos:  </span>{{userDetails.public_repos}}</p>
               <p><span>Created:   </span>{{userDetails.created_at|date}}</p>
@@ -61,76 +61,3 @@
 
 
 
-
-
-
-
-
-<!-- <section class="section">
-    <div class="container">
-    <form #searchForm='ngForm' (ngSubmit)="submitSearch()">
-        <div class="row mt-4">
-            <div class=" form-group col-md-6">
-                <input type="search" placeholder="Enter search details" class="form-control" id="username" #search="ngModel" name='user' required #username="ngModel">
-                <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
-                    <p>Input cannot be empty</p>
-                </div>
-            </div>
-            <div class=" form-group col-md-6">
-                <button type="submit" value="submit" class="btn btn-primary">Search</button>
-            </div>
-        </div>     
-    </form>
-    </div> 
-
-<div class="container">
-    <div class="row row-cols-4">
-        <div class="col">
-            <div class="card m-3">
-                <div class="card-title m-3">
-                    <h3><a href="{{user.html_url}}" class="href" target="_blank">{{user.login}}</a></h3>                   
-                </div>
-                <div class="card-content m-3">
-                   <img src={{user.avatar_url}} alt={{user.name}}>
-                    <p><span>Name:  </span>{{user.name}}</p>
-                    <p><span>Location:    </span>{{user.location}}</p>
-                    <p><span>html_url:  </span><a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
-                    <p><span>Public repos:  </span>{{user.public_repos}}</p>
-                    <p><span>Created:   </span>{{user.created_at|date}}</p>
-                </div>
-                <div class="card-footer">
-                    <i class="fa fa-user-circle ml-2" aria-hidden="true">
-                        <span>      Followers:  </span>{{user.followers}}
-                        <span>      Following: </span>{{user.following}}
-                    </i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-
-<div class="container">
-    <div class="card">      
-        <div class="card-body">
-            <div class="card-title">
-                <p><a href="{{user.html_url}}" target="_blank">{{user.login}}</a></p> 
-            </div>
-            <img src={{user.avatar_url}} alt={{user.name}}>
-            <p><span>Name:  </span>{{user.name}}</p>
-            <p><span>Id:    </span>{{user.id}}</p>
-            <p><span>html_url:  </span><a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
-            <p><span>Public repos:  </span>{{user.public_repos}}</p>
-            <p><span>Created:   </span>{{user.created_at|date}}</p>
-
-            <div class="card-footer">
-            <i class="fa fa-user-circle ml-2" aria-hidden="true">
-                <span>      Followers:  </span>{{user.followers}}
-                <span>      Following: </span>{{user.following}}
-            </i>
-            </div>
-        </div>
-    </div>
-</div>
- --> 
