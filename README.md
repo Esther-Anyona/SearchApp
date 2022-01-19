@@ -5,7 +5,7 @@
 ### Angular Week 2 IP
 
 
-![Esther](src/assets/home github.png)
+![Landing-page](src/assets/home github.png)
 
 ## Table of Contents
 1. Description
@@ -25,9 +25,8 @@
 
 * Anyone with a computer, smart phone, tablet or Ipad can access the app
 * It will require an internet connection 
-<p>With a good internet connection, click on the live link 
-<!-- live link -->
- to see how the website looks like. You can fork a copy from my account https://github.com/Esther-Anyona/SearchApp, and clone. Proposals on how to make the app better are welcome.</p>
+<p>With a good internet connection, click on the live link https://Esther-Anyona.github.io/SearchApp
+ to visit the website. You can fork a copy from my account https://github.com/Esther-Anyona/SearchApp, and clone. Proposals on how to make the app better are welcome.</p>
 
 
 ## BDD
